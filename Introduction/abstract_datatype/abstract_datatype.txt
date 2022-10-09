@@ -1,0 +1,22 @@
+__________________
+Abstract data-type
+__________________
+
+___________________________________________
+First of all, what is meant by a data-type?
+___________________________________________
+
+_A datatype is defined as representation of data, and its operations that are
+allowed on that specific datatype.
+
+Operations:
+
+_add(x)
+_remove()
+_search(target)
+
+____________________________________________________________________
+What does "abstract" means in the context of programming in general?
+____________________________________________________________________
+
+_"Abstract" means hiding internal details.
