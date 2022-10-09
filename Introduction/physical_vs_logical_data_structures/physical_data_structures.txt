@@ -1,0 +1,36 @@
+________________________
+Physical data-structures
+________________________
+
+_Arrays and Linked-lists are called as physical data-structures because they
+decides or defines how the memory is organized and how the memory is allocated.
+
+_Physical data-structures are meant for storing the data, they actually stores
+the data in memory.
+
+______
+Arrays
+______
+
+_Arrays are a collection of contiguous memory locations, all these locations are
+side-by-side.
+
+_Arrays have fixed-size (i.e static), once it is created of some size, then it
+cannot be expanded nor contracted.
+
+_There can be a pointer pointing to this array, so they can be created in inside
+the stack or inside heap.
+
+____________
+Linked-lists
+____________
+
+_Linked-lists are dynamic data-structure, and they are a collection of nodes,
+where each node contains data and is linked to the next node.
+
+_The size of the linked-list can grow and reduce dynamically, therefore it has a
+variable length.
+
+_The linked-list is always created in the heap.
+
+_The head-pointer maybe in the stack.
