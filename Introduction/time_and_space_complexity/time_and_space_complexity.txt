@@ -1,0 +1,50 @@
+_______________
+Time complexity
+_______________
+
+_There is a need to figure out how much time it takes for a machine to do a
+particular work to assess whether or not a program is running efficiently.
+
+_The running time of a program depends on the process and the procedure for
+completing the task.
+
+_Time complexity is pessimistic it only takes into account of worst case.
+
+________
+Order(n)
+________
+
+_The highest order/term in a polynomial of a time function.
+
+_Please refer to the adjacent section "analyzing_time_and_space_complexity"
+for better understanding.
+
+________________
+Simple for loops
+________________
+
+________________________________________________________________________________
+for (int i = 0; i < n; i++)
+{
+
+}
+
+________________________________________________________________________________
+
+The order is simple, Order(n) (i.e O(n))
+
+________________
+Nested for loops
+________________
+
+________________________________________________________________________________
+for (int i = 0; i < n; i++)
+{
+  for (int j = 0; j < n; i++)
+  {
+
+  }
+}
+________________________________________________________________________________
+
+The order is simple, Order (n ^ 2) (i.e O (n ^ 2)).

@@ -1,0 +1,95 @@
+___________________________________
+Analyzing time and space complexity
+___________________________________
+
+_It is assumed that every single "statement" in the function or the program
+takes one unit of time.
+
+_Time function: f(n) = number of statements
+
+_What does "statement" refers to in this context?
+  _assignment
+  _arithmetic operations
+  _bitwise operations
+  _logical comparisons
+
+_________
+Example 1
+_________
+
+________________________________________________________________________________
+int sum(int a[], int n)
+{
+  int s, i;
+  s = 0;                                  //1 time
+
+  /*
+    _"i = 0" (1 time, since it is initialization)
+
+    _"i < n" (n + 1 times, since the comparison will be compared until it fails
+    at the very end)
+
+    _"i++" (n times)
+
+    _________________________________________________________________________
+    In a for-loop we can ignore all the times each statement takes and choose
+    the largest number of times.
+    _________________________________________________________________________
+
+  */
+  for (i = 0; i < n; i++)                 //n + 1 times
+  {
+    s = s + a[i];                         //n times
+  }
+  return s;                               //1 time
+}
+________________________________________________________________________________
+
+time function: f(n) = 1 + (n + 1) + n + 1 = 2n + 3
+
+the Order: O(n)                       //one for loop
+
+_________
+Example 2
+_________
+
+________________________________________________________________________________
+void add(int n)
+{
+  int i, j;
+
+  for (i = 0; i < n; i++)               //n + 1 times
+  {
+    for (j = 0; j < n; j++)             //n + 1 times
+    {
+      c[i][j] = a[i][j] + b[i][j];      //n x n = n ^ 2 times
+    }
+  }
+}
+
+________________________________________________________________________________
+
+time function: f(n) = (n + 1)(n + 1) + (n)(n) = (n ^ 2) + 2n + 1 + (n ^ 2)
+                                              = 2(n ^ 2) + 2n + 1
+
+the Order: O(n ^ 2)
+
+_________
+Example 3
+_________
+
+________________________________________________________________________________
+void swap(int x, int y)
+{
+  int t;
+
+  t = x;          //1st statement
+  x = y;          //2nd statement
+  y = t;          //3rd statement
+}
+
+________________________________________________________________________________
+
+Since there are 3 statements, the time-function: f(n) = 3 (n ^ 0) = 3
+
+the Order: O(n ^ 0) = O(1)          //no loops just once
