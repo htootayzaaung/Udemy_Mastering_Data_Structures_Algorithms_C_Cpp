@@ -65,6 +65,8 @@ _"stack-frame" is a subset of "stack"
 
 _The size of the memory required by a function is decided at compile time only.
 
+_Programs can access anything inside code-section and the stack.
+
 If there are a sequence of function calls, then how the memory is allocated
 inside the stack?
 
@@ -118,13 +120,13 @@ gets loaded to the function first and then the other function follows.
 
 _Once "func2" has carried out its operations it will be deleted from the stack.
 
-        --------------------------------------------------------------------------------
+-        --------------------------------------------------------------------------------
 
                                                                                                   -> Heap
 
-        --------------------------------------------------------------------------------  _
+       --------------------------------------------------------------------------------   _
                                                                                            |
-        --------------------------------------------------------------------------------   |
+       --------------------------------------------------------------------------------    |
                                                                                            |
        --------------------------------------------------------------------------------    |     -> Stack
 func1   i, a                                                                               |
@@ -147,17 +149,43 @@ ____
 Heap
 ____
 
+_"stack" memory is organised "heap" memory is unorganized.
 
+_"heap" memory should be used like a resource, when required. It should also be
+released when it is no longer required.
 
+_programs cannot directly access heap memory
 
+_How heap memory is accessed? Pointers!
 
+________________________________________________________________________________
+void main()
+{
+  int *p;
 
+  p = new int[5];
 
+}
+________________________________________________________________________________
 
+      ---------------------------------------------------------------------------------
+       __ __ __ __ __
+      |_p_|__|__|__|__|  int[5]                                                                   -> Heap
+                            //remember ffx012 only points to the beginning of an array
+      ---------------------------------------------------------------------------------   _
+                                                                                           |
+       --------------------------------------------------------------------------------    |
+                                                                                           |
+       --------------------------------------------------------------------------------    |     -> Stack
+                                                                                           |
+       --------------------------------------------------------------------------------    |
+main    p   //ffx012                                                                       |
+       --------------------------------------------------------------------------------   _|
+       _Machine_code for main                                                                    -> Code-section
+       --------------------------------------------------------------------------------
 
-
-
-
+_It's a good practice to free the memory once it is no longer in use, to prevent
+"memory-leak"
 ________________________________________________________________________________
 In C/C++ number of bytes taken by a primitive datatype depends on the compiler, |
 the operating system, and the hardware.                                         |
